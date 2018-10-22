@@ -19,6 +19,7 @@
 			background-color: teal;
 			font-size: 300%;
 			text-align: center;
+			
 		}
 	</style>
 
@@ -44,8 +45,10 @@
 			boardWidth = $('.board').width();
 
 			// TODO 2
+			
 			var position;
 			var points;
+			var hue = 'white';
 			var speed;
 			var direction;
 			direction = 1;
@@ -54,6 +57,7 @@
 			speed = 10;
 			box.css('left', position);
 			
+
 			var update = function() {
 				// TODO 3 / 6 / 7 / 8
 				position = position + (speed * direction);
@@ -64,6 +68,7 @@
 					direction = 1;
 				}
 				box.css('left', position);
+
 				box.text(points);
 			};
 
@@ -74,6 +79,8 @@
 					speed = speed + 3;
 					position = 0;
 					points = points + 1;
+					hue = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+					box.css('background-color', hue );
 			};
 
 
